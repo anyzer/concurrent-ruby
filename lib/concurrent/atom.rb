@@ -19,7 +19,12 @@ module Concurrent
   # new value to the result of running the given block if and only if that
   # value validates.
   #
+  # Unlike in Clojure, `Atom` cannot participate in {Concurrent::TVar} transactions.
+  #
+  # @!macro thread_safe_variable_comparison
+  #
   # @see http://clojure.org/atoms Clojure Atoms
+  # @see http://clojure.org/state Values and Change - Clojure's approach to Identity and State
   class Atom < Synchronization::Object
     include Concern::Observable
 
